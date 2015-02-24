@@ -1,0 +1,38 @@
+{
+  "name": "Manatee-Wiki",
+  "version": "1.0.0",
+  "description": "A one stop shop for all of your manatee info.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManickYoj/Manatee-Wiki.git"
+  },
+  "keywords": [
+    "manatee",
+    "wiki",
+    "allisongpatterson",
+    "manickyoj",
+    "olin",
+    "js",
+    "riot"
+  ],
+  "author": "Nick Francisci & Allison Patterson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManickYoj/Manatee-Wiki/issues"
+  },
+  "homepage": "https://github.com/ManickYoj/Manatee-Wiki",
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "cookie-parser": "^1.3.4",
+    "express": "^4.12.0",
+    "express-handlebars": "^1.2.1",
+    "mongoose": "^3.8.23",
+    "morgan": "^1.5.1",
+    "path": "^0.11.14",
+    "riot": "^2.0.11"
+  }
+}
