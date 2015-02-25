@@ -1,8 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+		<title>Manatee-Wiki</title>
+
+		<!-- Include CSS -->
+		<link rel="stylesheet" href="/stylesheets/main.css" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		{{#each incl_css}}<link rel="stylesheet" href="/stylesheets/{{this}}.css" />{{/each}}
+
+		<!-- Include JS -->
+		<script src="/javascripts/riot.min.js"></script>
 		
 	</head>
 	<body>
+		{{> sidebar}}
+	
 		{{{body}}}
+		{{#each incl_js}}<script src="/javascripts/{{this}}.js"></script>{{/each}}
 	</body>
 </html>
