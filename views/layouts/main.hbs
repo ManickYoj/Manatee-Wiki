@@ -13,9 +13,7 @@
 		<script src="/javascripts/riot.min.js"></script>
 		
 	</head>
-	<body>
-		{{> sidebar}}
-	
+	<body>	
 		{{{body}}}
 		{{#each incl_js}}<script src="/javascripts/{{this}}.js"></script>{{/each}}
 	</body>
