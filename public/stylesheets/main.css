@@ -1,12 +1,15 @@
-#page {
-	overflow: none;
-	height: 100%;
-	margin-left: 20%;
-}
-
+/* Page Styles */
 body {
 	height: 100%;
 }
+
+h1 {
+	text-align: center;
+}
+
+/* Class Styles */
+.full-width { width: 100%; }
+.full-height { height: 100%; }
 
 .title-button {
 	display: block;
@@ -14,6 +17,7 @@ body {
 	width: 90%;
 }
 
+/* ID Styles */
 #sidebar {
     background: #ccc;
 	position: absolute;
@@ -28,7 +32,8 @@ body {
 	overflow-y: scroll;
 }
 
-h1 {
-	text-align: center;
-/*	height: 800px;*/
+#page {
+	overflow: none;
+	height: 100%;
+	margin-left: 20%;
 }
