@@ -17,7 +17,12 @@ mongoose.connect(mongoURI);
 
 var hbsOptions = {
 	defaultLayout: 'main',
-	extname: 'hbs'
+	extname: 'hbs',
+	helpers: {
+		json: function(context) {
+    		return JSON.stringify(context);
+		}
+	}
 };
 
 app.engine('hbs', hbs(hbsOptions));
@@ -34,7 +39,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routing Table
 var main = require('./routes/main');
 app.get('/', main.index);
-app.get('/article/*', main.article);
+app.get('/article', main.list);
+app.get('/article/:article', main.article);
+app.get('/article/:article/edit', main.edit);
 
 // Listen
 app.listen(PORT);

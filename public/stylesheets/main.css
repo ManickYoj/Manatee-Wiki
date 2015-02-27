@@ -10,6 +10,8 @@ h1 {
 /* Class Styles */
 .full-width { width: 100%; }
 .full-height { height: 100%; }
+.right { text-align: right;}
+.md-padding { padding: 1em; }
 
 .title-button {
 	display: block;

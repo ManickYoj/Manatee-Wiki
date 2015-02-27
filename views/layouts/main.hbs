@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="/stylesheets/main.css" />
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 		{{#each incl_css}}<link rel="stylesheet" href="/stylesheets/{{this}}.css" />{{/each}}
+		<link rel="stylesheet" type="text/css" href="/stylesheets/waves.min.css" />
 
 		<!-- Include JS -->
 		<script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
@@ -15,14 +16,13 @@
 	</head>
 	<body>
 		<div id='sidebar'> {{> sidebar}} </div>
-		<div id='page'>
-			<div id='page-header'>
-				{{> page-header}}
-			</div>
-			
+		<div id='page'>			
 			{{{body}}}
 		</div>
-		<script>riot.mount('*')</script>
+		<script>riot.mount('*'{{#if riot}}, {{{json riot}}}{{/if}})</script>
+		<script type="text/javascript" src="/javascripts/waves.min.js"></script>
+		<script type="text/javascript">Waves.displayEffect();</script>
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 		{{#each incl_js}}<script src="/javascripts/{{this}}.js"></script>{{/each}}
 	</body>
 </html>
