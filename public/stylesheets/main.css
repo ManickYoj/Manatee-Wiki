@@ -3,39 +3,40 @@ body {
 	height: 100%;
 }
 
-h1 {
-	text-align: center;
-}
-
 /* Class Styles */
 .full-width { width: 100%; }
 .full-height { height: 100%; }
 .right { text-align: right;}
+.center { text-align: center; }
 .md-padding { padding: 1em; }
-
-.title-button {
-	display: block;
-	margin: 2px 5px 0 5px;
-	width: 90%;
+.include-white { white-space: pre; }
+.h-line { width: 95%; margin-top: 0; margin-bottom: 0; }
+.title-button { display: block; }
+.scrollbar { 
+	width:100%;
+	background-color:lightgray;
+	overflow-y:scroll;
+}
+.content{
+height:450px;
 }
 
 /* ID Styles */
 #sidebar {
-    background: #ccc;
 	position: absolute;
-    width: 20%;
-    bottom: 0;
-    top: 0;
-    overflow: hidden;
-}
-
-#titles {
-	/*height: 60px;*/
-	overflow-y: scroll;
+	background-color: #ccc;
+	width: 20%;
+	top: 0;
+	bottom: 0;
 }
 
 #page {
 	overflow: none;
 	height: 100%;
 	margin-left: 20%;
+}
+
+#titles {
+	/*position: absolute;*/
+	overflow-y: scroll;
 }
