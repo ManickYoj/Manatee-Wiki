@@ -1,4 +1,5 @@
 <sidebar-fixed>
+
 	<h1 class="center">Articles: </h1>
 	<hr class="h-line"></hr>
 	<button class="waves-effect waves-button full-width">
