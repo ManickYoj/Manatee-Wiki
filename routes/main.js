@@ -7,13 +7,11 @@ module.exports.list = function (req, res) {
 }
 
 module.exports.article = function (req, res) {
-	res.render('article', {
-		riot: {
-			header: {
-				title: req.params.article
-			}
-		},
-		content : "<strong>Manatees</strong> are a graceful, aquatic variety of bovine."
+	var rq = req.params;
+	res.json({
+		articleTitle: rq.name + "!",
+		articleContent: rq.name +
+		" is/are a sublime aquatic mammal of great size."
 	});
 }
 
