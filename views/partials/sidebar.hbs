@@ -1,5 +1,9 @@
 <sidebar-fixed></sidebar-fixed>
-<sidebar-titles></sidebar-titles>
+
+{{#each sidebarArticles}}
+	<a class="waves-effect waves-button full-width title-button" href={{url}}>{{title}}</a>
+	<hr class="h-line"></hr>
+{{/each}}
 
 <script src="/tags/sidebar-fixed.tag" type="riot/tag"></script>
 <script src="/tags/sidebar-titles.tag" type="riot/tag"></script>
