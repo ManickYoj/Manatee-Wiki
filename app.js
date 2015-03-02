@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routing Table
 var main = require('./routes/main');
 app.get('/', main.index);
-app.get('/article/:name', main.article);
+app.get('/article/:title', main.article);
 
 // Listen
 app.listen(PORT);
