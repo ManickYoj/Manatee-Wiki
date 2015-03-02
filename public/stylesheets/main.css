@@ -49,3 +49,7 @@ wiki-article {
 #articleContent { 
 	display: table-row;
 }
+
+#swimming-manatee {
+	border-radius: 70%;
+}

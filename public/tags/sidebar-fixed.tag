@@ -1,7 +1,7 @@
 <sidebar-fixed>
 
 	<div class="center md-padding">
-	<img src="http://rs267.pbsrc.com/albums/ii293/lpscollect/manatee.gif~c200"></img>
+	<img id="swimming-manatee" src="http://rs267.pbsrc.com/albums/ii293/lpscollect/manatee.gif~c200"></img>
 </div>
 
 	<h1 class="center">Articles: </h1>
