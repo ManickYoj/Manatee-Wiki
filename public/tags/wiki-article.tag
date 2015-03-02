@@ -1,4 +1,4 @@
-<!--<wiki-article>-->
+<wiki-article>
 	<div id="article-header" class="row full-width md-padding">
 		<div class="col-md-6">
 			<h4>{ articleTitle }</h3>
@@ -17,7 +17,7 @@
 
 	var edit = function(e) {
 		self.buttonSet = [buttons.discard, buttons.save];
-		$articleContent.html($articleContent.html())
+		$articleContent.html($articleContent.html());
 	}
 
 	var discard = function (e) {
