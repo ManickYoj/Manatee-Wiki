@@ -1,17 +1,16 @@
 <wiki-article>
 	<div id="article-header" class="row full-width md-padding">
 		<div class="col-md-6">
-			<h4>{ articleTitle }</h3>
+			<h4>{ title }</h3>
 		</div>
 		<div class="col-md-2 col-md-offset-4">
 			<button class='waves-effect waves-button pull-right' each={ buttonSet } onclick={ clickFunction }>{name}</button>
 		</div>
 	</div>
 	<div id="article-content" class="full-width md-padding">
-		{ articleContent }
+		{ content }
 	</div>
 
-	<a each={ article } class="waves-button" href='#article/' + {articleName}> {articleName} </a>
 	var self = this;
 	$articleContent = $('#article-content');
 
