@@ -9,9 +9,9 @@ module.exports.index = function (req, res) {
 	.find()
 	.select('title')
 	.sort({title: -1})
-	.exec(function (err, articleTitles) {
+	.exec(function (err, articles) {
 		if (err) return res.sendStatus(500);
-		res.render('index', articleTitles)
+		res.render('index', {articles: articles})
 	})
 }
 
