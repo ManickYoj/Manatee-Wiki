@@ -1,9 +1,10 @@
 <sidebar-fixed></sidebar-fixed>
-
+<div class="scrollable" id="article-list">
 {{#each sidebarArticles}}
-	<a class="waves-effect waves-button full-width title-button" href={{url}}>{{title}}</a>
+	<a class="waves-effect waves-button full-width title-button" href="#article/{{title}}">{{title}}</a>
 	<hr class="h-line"></hr>
 {{/each}}
+</div>
 
 <script src="/tags/sidebar-fixed.tag" type="riot/tag"></script>
 <script src="/tags/sidebar-titles.tag" type="riot/tag"></script>

@@ -1,8 +1,8 @@
 module.exports.index = function (req, res) {
 	res.render('index', {
 		sidebarArticles: [
-			{title: "Manatees", url: "#manatees"},
-			{title: "Porpoises", url: "#porpoises"}
+			{title: "Manatees"},
+			{title: "Porpoises"}
 		]
 	});
 }
