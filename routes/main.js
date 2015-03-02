@@ -1,5 +1,10 @@
 module.exports.index = function (req, res) {
-	res.render('index');
+	res.render('index', {
+		sidebarArticles: [
+			{title: "Manatees", url: "#manatees"},
+			{title: "Porpoises", url: "#porpoises"}
+		]
+	});
 }
 
 module.exports.list = function (req, res) {
