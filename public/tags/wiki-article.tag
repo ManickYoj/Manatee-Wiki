@@ -16,7 +16,7 @@
 
 	var edit = function(e) {
 		self.buttonSet = [buttons.discard, buttons.save];
-		$articleContent.html($articleContent.html());
+		self.content = "<form><textarea>" + self.content + "</textarea></form>";
 	}
 
 	var discard = function (e) {
@@ -37,9 +37,13 @@
 	}
 	
 	var updatePage = function (collection, id, action) {
-		$.get(collection + '/' + id)
-		.done(function(res, status) { self.update(res); })
-		.error(function(res, status) {/*serve 500*/});
+		if (collection == 'new') {
+
+		} else {
+			$.get(collection + '/' + id)
+			.done(function(res, status) { self.update(res); })
+			.error(function(res, status) {/*serve 500*/});
+		}
 	};
 	
 	this.buttonSet = [buttons.edit];
