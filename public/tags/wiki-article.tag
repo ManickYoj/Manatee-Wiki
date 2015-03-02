@@ -1,4 +1,4 @@
-<wiki-article>
+<!--<wiki-article>-->
 	<div id="article-header" class="row full-width md-padding">
 		<div class="col-md-6">
 			<h4>{ articleTitle }</h3>
@@ -11,10 +11,13 @@
 		{ articleContent }
 	</div>
 
+	<a each={ article } class="waves-button" href='#article/' + {articleName}> {articleName} </a>
 	var self = this;
+	$articleContent = $('#article-content');
 
 	var edit = function(e) {
 		self.buttonSet = [buttons.discard, buttons.save];
+		$articleContent.html($articleContent.html())
 	}
 
 	var discard = function (e) {
