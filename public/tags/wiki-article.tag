@@ -1,5 +1,5 @@
 <wiki-article>
-	<div id="article-header" class="row full-width md-padding">
+	<div id="articleHeader" class="row full-width md-padding">
 		<div class="col-md-6">
 			<h4>{ title }</h3>
 		</div>
@@ -7,24 +7,28 @@
 			<button class='waves-effect waves-button pull-right' each={ buttonSet } onclick={ clickFunction }>{name}</button>
 		</div>
 	</div>
-	<div id="article-content" class="full-width md-padding">
-		{ content }
+
+	<div id="articleContent" class="row md-padding">
+		<div class="col-md-12">
+			{ content }
+		</div>
 	</div>
 
 	var self = this;
-	$articleContent = $('#article-content');
 
 	var edit = function(e) {
 		self.buttonSet = [buttons.discard, buttons.save];
-		self.content = "<form><textarea>" + self.content + "</textarea></form>";
+		self.articleContent.innerHTML = "<form class='full-height full-width'><textarea class='full-width full-height'>"+self.content+"</textarea></form>";
 	}
 
 	var discard = function (e) {
 		self.buttonSet = [buttons.edit];
+		self.articleContent.innerHTML = self.content;
 	}
 
 	var save = function(e) {
 		self.buttonSet = [buttons.edit];
+		discard(e);
 		/*$.post(collection + '/' + id, {
 			article: $('#contentForm').val();
 		});*/

@@ -1,11 +1,13 @@
 /* Page Styles */
-body {
-	height: 100%;
+body { height: 100%; }
+wiki-article { 
+	display: table;
+	width: 100%;
 }
 
 /* Class Styles */
-.full-width { width: 100%; }
-.full-height { height: 100%; }
+.full-width { width: 100% !important; }
+.full-height { height: 100% !important;}
 .right { text-align: right;}
 .center { text-align: center; }
 .md-padding { padding: 1em; }
@@ -13,27 +15,37 @@ body {
 .title-button { display: block; }
 .scrollable { overflow-y: scroll; }
 
-
 /* ID Styles */
 #sidebar {
-	position: absolute;
+	display: inline-block;
+	float: left;
+	height: 100%;
 	background-color: #ccc;
 	width: 20%;
-	top: 0;
-	bottom: 0;
 }
 
 #page {
-	height: 100%;
-	margin-left: 20%;
+	position: relative;
+	display: inline-block;
+	float:left;
+	width: 80%;
+	padding:1em;
 }
 
 #article-list {
 	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin: 0 auto;
 	border-style: solid;
 	border-color: #eee;
 	border-width: .2em;
 	margin-top: 2em;
+}
+
+#articleHeader {
+	display: table-row;
+	height: 1px; /* Content expands cell*/
+}
+
+#articleContent { 
+	display: table-row;
 }
