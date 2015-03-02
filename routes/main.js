@@ -29,7 +29,7 @@ module.exports.article = function (req, res) {
 };
 
 module.exports.list = function (req, res) {
-
+	
 }
 
 module.exports.edit = function (req, res) {
