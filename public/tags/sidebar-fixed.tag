@@ -1,11 +1,15 @@
+<!-- "fixed" as in static / the parts that are always there -->
+
 <sidebar-fixed>
 
+	<!-- manatee gif -->
 	<div class="center md-padding">
-	<img id="swimming-manatee" src="http://rs267.pbsrc.com/albums/ii293/lpscollect/manatee.gif~c200"></img>
-</div>
+		<img id="swimming-manatee" src="http://rs267.pbsrc.com/albums/ii293/lpscollect/manatee.gif~c200"></img>
+	</div>
 
 	<h1 id="sidebar-title" class="center">Manatee Wiki!</h1>
 
+	<!-- search bar -->
 	<div class="center md-padding">
 		<form id="searchForm" onsubmit={ search }>
 			<input type="text" id="searchBar" placeholder="Search articles..."></input>
@@ -22,7 +26,6 @@
 	var self = this;
 
 	search(e) {
-		console.log('test');
 		riot.route('article/'+ self.searchBar.value);
 	}
 
