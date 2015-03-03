@@ -1,5 +1,5 @@
 <wiki-article>
-	<div id="articleHeader" class="row full-width md-padding">
+		<div id="articleHeader" class="row full-width md-padding">
 		<div class="col-md-6">
 			<h4 id="articleTitle">{ title }</h3>
 		</div>
@@ -33,28 +33,18 @@
 	}
 
 	var save = function(e) {
-		self.buttonSet = [buttons.edit];
-		self.update()
+		riot.update();
+
+		$.post('article/' + self.title, {
+			title: self.titleField.value,
+			content: self.contentField.value
+		}).done(function () {
+			riot.route('article/' + self.title);
+		});
 
 		self.title = self.titleField.value;
 		self.content = self.contentField.value;
-
-		self.articleTitle.innerHTML = self.title;
-		self.articleContent.innerHTML = self.content;
-
-
-		/*  TODO: Decide whether a title change should
-			- Move an article to the new URI
-			- Create a new article with the new content
-			under the new title as the URI id (leave the
-			old article alone)
-			- Change title, but keep article at same URI
-		*/
-
-		$.post('articles/' + self.title + '/save', {
-			title: self.title,
-			content: self.content
-		});
+		discard();
 	}
 
 	var buttons = {
