@@ -17,12 +17,7 @@ mongoose.connect(mongoURI);
 
 var hbsOptions = {
 	defaultLayout: 'main',
-	extname: 'hbs',
-	helpers: {
-		json: function(context) {
-    		return JSON.stringify(context);
-		}
-	}
+	extname: 'hbs'
 };
 
 app.engine('hbs', hbs(hbsOptions));
