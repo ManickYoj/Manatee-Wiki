@@ -20,7 +20,7 @@ wiki-article {
 	display: inline-block;
 	float: left;
 	height: 100%;
-	background-color: #ccc;
+	background-color: #a3d9df;
 	width: 20%;
 }
 
@@ -36,7 +36,7 @@ wiki-article {
 	width: 90%;
 	margin: 0 auto;
 	border-style: solid;
-	border-color: #eee;
+	border-color: white;
 	border-width: .2em;
 	margin-top: 2em;
 }
@@ -57,9 +57,15 @@ wiki-article {
 #searchBar {
 	border-radius: 20px;
 	text-align: center;
+	margin-bottom: .5em;
 }
 
 #search-button {
-	border-radius: 20px;
-	
+	border-radius: 70%;
+	background-color: white;
+}
+
+#sidebar-title {
+	font-style: italic;
+	font-weight: 900;
 }

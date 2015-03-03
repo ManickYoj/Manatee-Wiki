@@ -4,12 +4,12 @@
 	<img id="swimming-manatee" src="http://rs267.pbsrc.com/albums/ii293/lpscollect/manatee.gif~c200"></img>
 </div>
 
-	<h1 class="center">Articles: </h1>
+	<h1 id="sidebar-title" class="center">Manatee Wiki!</h1>
 
-	<div class="center">
+	<div class="center md-padding">
 		<form id="searchForm" onsubmit={ search }>
 			<input type="text" id="searchBar" placeholder="Search articles..."></input>
-			<input type="submit" class="waves-effect waves-button" id="search-button" value="->"></input>
+			<input type="submit" id="search-button" value="->"></input>
 		</form>
 	</div>
 
