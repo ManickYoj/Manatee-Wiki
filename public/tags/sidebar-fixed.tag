@@ -7,9 +7,9 @@
 	<h1 class="center">Articles: </h1>
 
 	<div class="center">
-		<form id="search-form">
-			<input type="search" id="search-bar" placeholder="search articles..."></input>
-			<input type="submit" class="waves-effect waves-button" id="perform-search" value="->"></input>
+		<form id="searchForm">
+			<input type="text" id="searchBar" placeholder="Search articles..."></input>
+			<input type="submit" class="waves-effect waves-button" onclick="riot.route('article/'+self.searchBar.value);" value="->"></input>
 		</form>
 	</div>
 
@@ -18,5 +18,7 @@
 		Write New Article
 	</button>
 	<hr class="h-line"></hr>
+
+	var self = this;
 
 </sidebar-fixed>
