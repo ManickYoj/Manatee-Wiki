@@ -54,13 +54,9 @@
 	}
 	
 	var updatePage = function (collection, id, action) {
-		if (collection == 'new') {
-
-		} else {
-			$.get(collection + '/' + id)
-			.done(function(res, status) { self.update(res); })
-			.error(function(res, status) {/*serve 500*/});
-		}
+		$.get(collection + '/' + id)
+		.done(function(res, status) { self.update(res); })
+		.error(function(res, status) {/*serve 500*/});
 	};
 	
 	this.buttonSet = [buttons.edit];
