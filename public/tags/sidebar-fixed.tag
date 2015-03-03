@@ -14,9 +14,9 @@
 	</div>
 
 	<hr class="h-line"></hr>
-	<button class="waves-effect waves-button full-width">
+	<a class="waves-effect waves-button full-width" href="#new">
 		Write New Article
-	</button>
+	</a>
 	<hr class="h-line"></hr>
 
 	var self = this;

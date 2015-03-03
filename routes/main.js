@@ -28,6 +28,17 @@ module.exports.article = function (req, res) {
 };
 
 /*
+API path for creating a new article.
+Responds with the newly created article data.
+*/
+module.exports.create = function (req, res) {
+	Article.create(req.body, function(err, article) {
+		if (err) return res.sendStatus(500);
+		res.json(article);
+	});
+}
+
+/*
 API path for editing an article title or content.
 Note that if the title is changed, the URI will change
 as well. This is expected behavior.

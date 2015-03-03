@@ -41,6 +41,7 @@ var main = require('./routes/main');
 app.get('/', main.index);
 app.get('/article/:title', main.article);
 app.post('/article/:title', main.edit);
+app.post('/article', main.create);
 
 // Listen
 app.listen(PORT);
