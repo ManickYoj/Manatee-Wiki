@@ -1,12 +1,6 @@
 <wiki-article>
-	<div if={ newMode && !editMode } class="row">
-		<div class="col-md-12 md-padding center-text">
-			<h3> New Page Request Deleted. </h3>
-		</div>
-	</div>
-
 	<!-- Article Header -->
-	<div if={ title } if={ !(newMode && !editMode) } id="articleHeader" class="row full-width">
+	<div  if={ title && !(newMode && !editMode) } id="articleHeader" class="row full-width">
 
 		<!-- Title -->
 		<div class="col-md-6">
@@ -32,23 +26,29 @@
 
 	<!-- Content -->
 	<div if={ !(newMode && !editMode) } class="row full-height col-md-12 full-height">
-		<div if={ !editMode } id='articleContent' class="col-md-12 full-height md-padding">
+		<div if={ !editMode } class="col-md-12 full-height tr">
 			{ content }
 		</div>
 
-		<textarea if={ editMode } id='contentField' class='col-md-12 full-height md-padding'>
+		<textarea id='contentField' if={ editMode } class="col-md-12 full-height tr">
 			{ content }
-		</textarea>
+		</textarea>		
+	</div>
+
+	<!-- New Page Cancellation Notification -->
+	<div if={ newMode && !editMode } class="row">
+		<div class="col-md-12 md-padding center">
+			<h3> New Page Request Deleted. </h3>
+			<h3><small><a onclick={ toggleEdit }>Try Again?</a></small></h3>
+		</div>
 	</div>
 
 	var self = this;
 
-	toggleEdit (e) {
-		this.editMode = !this.editMode;
-	}
+	toggleEdit (e) { self.editMode = !self.editMode; }
 
 	save (e) {
-		riot.update();
+		self.update();
 
 		var postURI = 'article/' + self.title;
 		if (self.newMode) postURI = 'article';
@@ -56,31 +56,35 @@
 		$.post(postURI, {
 			title: self.titleField.value,
 			content: self.contentField.value
-		}).done(function () {
+		}).done(function (data) {
 			riot.route('article/' + self.titleField.value);
 		});		
-
-		self.title = self.titleField.value;
-		self.content = self.contentField.value;
 	}
 	
 	// ----- Route Handling
 	function getArticle (id) {
+		self.update({
+			newMode: false,
+			editMode: false
+		});
+
 		$.get('article/' + id)
 		.done(function(res, status) { self.update(res); })
 		.error(function(res, status) {/*serve 500*/});
 	}
 
 	var route = function (collection, id, action) {
-		if (collection == 'new') {
-			self.update({
-				title: 'New Page',
-				content: 'Content goes here.'
-			})
-			self.newMode = true;
-			self.editMode = true;
-		} 
+		if (collection == 'new') newPage(); 
 		else getArticle(id);
+	}
+
+	function newPage () {
+		self.update({
+			title: 'New Page',
+			content: 'Content goes here.',
+			newMode: true,
+			editMode: true
+		})
 	}
 
 	// Listen for route changes

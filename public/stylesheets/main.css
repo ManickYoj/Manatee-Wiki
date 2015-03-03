@@ -14,6 +14,7 @@ wiki-article {
 .h-line { width: 95%; margin-top: 0; margin-bottom: 0; }
 .title-button { display: block; }
 .scrollable { overflow-y: scroll; }
+.tr { display: table-row; }
 
 /* ID Styles */
 #sidebar {
@@ -46,10 +47,6 @@ wiki-article {
 	height: 1px; /* Content expands cell*/
 }
 
-#articleContent { 
-	display: table-row;
-}
-
 #swimming-manatee {
 	border-radius: 70%;
 }
@@ -61,5 +58,4 @@ wiki-article {
 
 #search-button {
 	border-radius: 20px;
-	
 }
