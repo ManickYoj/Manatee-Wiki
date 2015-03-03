@@ -34,14 +34,9 @@ Note that if the title is changed, the URI will change
 as well. This is expected behavior.
 */
 module.exports.edit = function (req, res) {
-	var rq = req.params;
-	console.log(req.body);
-
-	Article
-	.findOneAndUpdate({title: rq.title}, req.body, function (err, article){
+	Article.findOneAndUpdate({title: req.params.title}, req.body, function (err, article){
 		if (err) return res.sendStatus(500);
-		console.log('article updated: ' + article)
 		res.sendStatus(200);
-	})
+	});
 }
 
