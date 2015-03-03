@@ -54,6 +54,7 @@
 	}
 	
 	var updatePage = function (collection, id, action) {
+<<<<<<< HEAD
 		if (collection == 'new') {
 
 		} else {
@@ -63,6 +64,11 @@
 			self.update(res); })
 			.error(function(res, status) {/*serve 500*/});
 		}
+=======
+		$.get(collection + '/' + id)
+		.done(function(res, status) { self.update(res); })
+		.error(function(res, status) {/*serve 500*/});
+>>>>>>> nick-branch
 	};
 	
 	this.buttonSet = [buttons.edit];

@@ -21,13 +21,11 @@ Sends a JSON representation of the requested
 article data.
 */
 module.exports.article = function (req, res) {
-	var rq = req.params;
-	Article.findOne({title: rq.title}, function (err,article) {
+	Article.findOne({title: req.params.title}, function (err,article) {
 	   if (err) return res.sendStatus(500);
 	   res.json(article);
 	});
 };
-
 
 
 /*
