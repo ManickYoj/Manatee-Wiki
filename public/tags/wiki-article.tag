@@ -53,20 +53,21 @@
 		save: {clickFunction: save, name: 'save'}
 	}
 	
-	var updatePage = function (collection, id, action) {
-		if (collection == 'new') {
+	// ----- Route Handling
+	function getArticle (id) {
+		$.get('article/' + id)
+		.done(function(res, status) { self.update(res); })
+		.error(function(res, status) {/*serve 500*/});
+	}
 
-		} else {
-			$.get(collection + '/' + id)
-			.done(function(res, status) { 
-			console.log(res);
-			self.update(res); })
-			.error(function(res, status) {/*serve 500*/});
-		}
-	};
-	
+	var route = function (collection, id, action) {
+		getArticle(id);
+	}
+
 	this.buttonSet = [buttons.edit];
-	riot.route.exec(updatePage);
-	riot.route(updatePage);
+
+	// Listen for route changes
+	riot.route.exec(route);
+	riot.route(route);
 	
 </wiki-article>
