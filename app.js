@@ -40,6 +40,7 @@ app.use(express.static(path.join(__dirname, "public")));
 var main = require('./routes/main');
 app.get('/', main.index);
 app.get('/article/:title', main.article);
+app.post('/article/:title', main.edit);
 
 // Listen
 app.listen(PORT);
