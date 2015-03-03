@@ -1,38 +1,48 @@
 <wiki-article>
-		<div id="articleHeader" class="row full-width md-padding">
+	<!-- Article Header -->
+	<div if={ title } id="articleHeader" class="row full-width md-padding">
+
+		<!-- Title -->
 		<div class="col-md-6">
-			<h4 id="articleTitle">{ title }</h3>
+			<h4 if={ !editMode } id='articleTitle' class='md-padding'>{ title }</h4>
+
+			<input if={ editMode } id='titleField' value={ title } />
 		</div>
-		<div class="col-md-2 col-md-offset-4">
-			<button class='waves-effect waves-button pull-right' each={ buttonSet } onclick={ clickFunction }>{name}</button>
+
+		<!-- Toolbar -->
+		<div id="toolbar" class="col-md-2 col-md-offset-4">
+			<button if={ !editMode } class='waves-effect waves-button pull-right' onclick={ toggleEdit }>edit
+			</button>
+
+			<button if={ editMode } class='waves-effect waves-button pull-right' onclick={ toggleEdit }>
+				discard
+			</button>
+			<button if={ editMode } class='waves-effect waves-button pull-right' onclick={ save }>
+				save
+			</button>
+			
 		</div>
+
 	</div>
-	<div class="row md-padding full-height">
-		<div id="articleContent" class="col-md-12 full-height">
+
+	<!-- Content -->
+	<div class="row md-padding full-height col-md-12 full-height">
+		<div if={ !editMode } id='articleContent' class="col-md-12 full-height">
 			{ content }
 		</div>
+
+		<textarea if={ editMode } id='contentField' class='col-md-12 full-height'>
+			{ content }
+		</textarea>
 	</div>
 
 	var self = this;
 
-	var edit = function(e) {
-		self.buttonSet = [buttons.discard, buttons.save];
-
-		self.articleTitle.innerHTML = "<input id='titleField' value='" + self.title + "'/>";
-		self.titleField = articleTitle.firstChild;
-
-		self.articleContent.innerHTML = "<textarea id='contentField' class='full-width full-height md-padding'>"
-			+ self.content + "</textarea>";
-		self.contentField = articleContent.firstChild;
+	toggleEdit (e) {
+		this.editMode = !this.editMode;
 	}
 
-	var discard = function (e) {
-		self.buttonSet = [buttons.edit];
-		self.articleTitle.innerHTML = self.title;
-		self.articleContent.innerHTML = self.content;
-	}
-
-	var save = function(e) {
+	save (e) {
 		riot.update();
 
 		$.post('article/' + self.title, {
@@ -46,12 +56,6 @@
 		self.content = self.contentField.value;
 		discard();
 	}
-
-	var buttons = {
-		edit: {clickFunction: edit, name: 'edit'},
-		discard: {clickFunction: discard, name: 'discard'},
-		save: {clickFunction: save, name: 'save'}
-	}
 	
 	// ----- Route Handling
 	function getArticle (id) {
@@ -61,10 +65,12 @@
 	}
 
 	var route = function (collection, id, action) {
-		getArticle(id);
+		if (collection == 'new') {
+			self.title = 'New Page';
+			self.content = "Content goes here.";
+		} 
+		else getArticle(id);
 	}
-
-	this.buttonSet = [buttons.edit];
 
 	// Listen for route changes
 	riot.route.exec(route);
