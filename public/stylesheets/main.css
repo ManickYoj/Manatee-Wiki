@@ -53,3 +53,13 @@ wiki-article {
 #swimming-manatee {
 	border-radius: 70%;
 }
+
+#searchBar {
+	border-radius: 20px;
+	text-align: center;
+}
+
+#search-button {
+	border-radius: 20px;
+	
+}

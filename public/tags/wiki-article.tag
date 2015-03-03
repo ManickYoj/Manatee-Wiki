@@ -58,7 +58,9 @@
 
 		} else {
 			$.get(collection + '/' + id)
-			.done(function(res, status) { self.update(res); })
+			.done(function(res, status) { 
+			console.log(res);
+			self.update(res); })
 			.error(function(res, status) {/*serve 500*/});
 		}
 	};
