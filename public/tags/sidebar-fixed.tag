@@ -20,10 +20,6 @@
 	<hr class="h-line"></hr>
 
 	var self = this;
-
-	search(e) {
-		console.log('test');
-		riot.route('article/'+ self.searchBar.value);
-	}
+	search(e) {	riot.route('article/'+ self.searchBar.value); }
 
 </sidebar-fixed>
